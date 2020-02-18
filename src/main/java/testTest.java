@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class testTest {
 
     public static void main (String [] args) throws IOException {
-        System.out.println(isNumeric());
+        System.out.println(isNumeric() + ", the string entered is not a number");
         System.out.println("here is your string with flipped case: "+SwapCase());
         System.out.println("here is the string reversed: "+ reverse());
     }
@@ -16,12 +16,7 @@ public class testTest {
         Scanner scanner = new Scanner(System.in);
         System.out.print("enter a string please: ");
         String str = scanner.next();
-        for ( char c : str.toCharArray()) {
-            if (!Character.isDigit(c))
-                return false;
-            System.out.println("this is number, not a string. you sneaky sob");
-        }
-        return true;
+        return StringUtils.isNumeric(str);
     }
 
     public static String SwapCase() {
